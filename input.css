@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+.label_style {
+  @apply text-white font-semibold block my-4;
+}
+
+.input_style {
+  @apply rounded-lg focus:outline-none px-2 h-8 w-full;
+}
