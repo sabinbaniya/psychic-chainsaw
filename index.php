@@ -11,6 +11,7 @@ include_once("./db/connectDB.php")
     <title>Hotel Booking System</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./index.js" defer></script>
 </head>
 <body class="max-w-[1400px] mx-auto">
     <!-- header section start  -->
@@ -43,43 +44,39 @@ include_once("./db/connectDB.php")
                 </div>
             </div>
         </main>
-        <div class="absolute flex items-center justify-between rounded-lg shadow-md px-8 py-4 w-[70%] left-1/2 -translate-x-1/2 -bottom-28 z-50 bg-white">
+        <div class="absolute flex items-center justify-between rounded-lg shadow-md px-8 py-4 w-[70%] left-1/2 -translate-x-1/2 -bottom-28 z-50 overflow-hidden bg-white">
+            
                 <div>
-                    <p class="text-gray-600 text-lg">Facilities</p>
+                    <p class="text-gray-600 text-lg font-bold">Facilities</p>
                     <div>
                         <ul class="flex space-x-2 mt-4">
                             <li title="swimming"><i class="fa-solid fa-person-swimming border-2 p-1 rounded-md text-blue-500 border-blue-500 "></i></li>
-                            <li><i class="fa-solid fa-wifi border-2 p-1 rounded-md text-green-500 border-green-500"></i></li>
-                            <li><i class="fa-solid fa-wind border-2 p-1 rounded-md text-yellow-500 border-yellow-500"></i></li>
-                            <li><i class="fa-solid fa-utensils border-2 p-1 rounded-md text-orange-500 border-orange-500"></i></li>
+                            <li title="wifi"><i class="fa-solid fa-wifi border-2 p-1 rounded-md text-green-500 border-green-500"></i></li>
+                            <li title="ac"><i class="fa-solid fa-wind border-2 p-1 rounded-md text-yellow-500 border-yellow-500"></i></li>
+                            <li title="dinner"><i class="fa-solid fa-utensils border-2 p-1 rounded-md text-orange-500 border-orange-500"></i></li>
                         </ul>
-                        
+                    </div>
+                </div>
+                <div class="w-48 h-[72px]">
+                    <p class="text-gray-600 text-lg font-bold">Book now </p>
+                    <div>
+                        <ul id="animating_ul" class="w-48 mt-4 font-bold"><li class="absolute">A Deluxe Room</li><li class="invisible absolute" >A Suite</li><li class="invisible absolute" >A Double Bed Room</li><li class="invisible absolute" >A Balcony Room</li></ul>
                     </div>
                 </div>
                 <div>
-                    <p>Facilities</p>
+                    <p>Time at <span id="location"></span></p>
                     <div>
-                        <ul>
-                            <li>Swimming</li>
-                            <li>Wi-Fi</li>
-                            <li>AC</li>
-                            <li>Dinner</li>
-                        </ul>
-                        
+                        <span id="hour">
+                            01
+                        </span>
+                        <span id="minute">
+                            40
+                        </span>
                     </div>
                 </div>
-                <div>
-                    <p>Facilities</p>
-                    <div>
-                        <ul>
-                            <li>Swimming</li>
-                            <li>Wi-Fi</li>
-                            <li>AC</li>
-                            <li>Dinner</li>
-                        </ul>
-                        
-                    </div>
-                </div>
+                <!-- <div class="absolute top-0 right-0 left-0 bottom-0 opacity-80 -z-10 bg-gradient-to-br from-cyan-400 via-blue-300 to-transparent blur-md rounded-lg"> -->
+                
+            </div>
 
 
             </div>

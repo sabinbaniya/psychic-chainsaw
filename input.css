@@ -9,3 +9,31 @@
 .input_style {
   @apply rounded-lg focus:outline-none px-2 h-8 w-full;
 }
+
+.fade_in {
+  animation: fade_in_transition 0.5s linear;
+}
+
+.fade_out {
+  animation: fade_out_transition 0.5s linear;
+}
+
+@keyframes fade_in_transition {
+  0% {
+    top: 10vh;
+    opacity: 0;
+  }
+  100% {
+    top: 8vh;
+    opacity: 100%;
+  }
+}
+
+@keyframes fade_out_transition {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -10px;
+  }
+}
