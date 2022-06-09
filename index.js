@@ -1,5 +1,5 @@
 const animatingUl = document.getElementById("animating_ul");
-const location = document.getElementById("location");
+const Location = document.getElementById("location");
 const hour = document.getElementById("hour");
 const minute = document.getElementById("minute");
 const childArr = Array.from(animatingUl.childNodes);
@@ -42,3 +42,15 @@ function animate() {
 setInterval(() => {
   animate();
 }, 4000);
+
+function clock() {
+  const time = new Date().toLocaleTimeString().split(":");
+  const hr = time[0];
+  const mins = time[1];
+
+  hour.innerText = hr;
+  minute.innerText = mins;
+}
+
+clock();
+setInterval(clock, 1000);

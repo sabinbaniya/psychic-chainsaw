@@ -12,6 +12,9 @@ include_once("./db/connectDB.php")
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
 </head>
 <body class="max-w-[1400px] mx-auto">
     <!-- header section start  -->
@@ -44,7 +47,7 @@ include_once("./db/connectDB.php")
                 </div>
             </div>
         </main>
-        <div class="absolute flex items-center justify-between rounded-lg shadow-md px-8 py-4 w-[70%] left-1/2 -translate-x-1/2 -bottom-28 z-50 overflow-hidden bg-white">
+        <div class="absolute flex items-start justify-between rounded-lg shadow-md px-8 py-4 w-[70%] left-1/2 -translate-x-1/2 -bottom-28 z-50 overflow-hidden bg-white">
             
                 <div>
                     <p class="text-gray-600 text-lg font-bold">Facilities</p>
@@ -64,17 +67,18 @@ include_once("./db/connectDB.php")
                     </div>
                 </div>
                 <div>
-                    <p>Time at <span id="location"></span></p>
+                    <p class="text-gray-600 text-lg font-bold">Time<span id="location"></span></p>
                     <div>
-                        <span id="hour">
-                            01
+                        <span class="relative bg-black inline-block h-16 w-14 text-white rounded-lg overflow-hidden">
+                            <span id="hour" class="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl font-black drop-shadow-lg" style="font-family: 'Orbitron',sans-serif;">00</span>
+                            <span class="absolute bottom-0 left-0 bg-gray-700 h-1/2 w-full"></span>
                         </span>
-                        <span id="minute">
-                            40
+                        <span class="relative bg-black inline-block h-16 w-14 text-white rounded-lg overflow-hidden">
+                            <span id="minute" class="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl font-black drop-shadow-lg" style="font-family: 'Orbitron',sans-serif;">00</span>
+                            <span class="absolute bottom-0 left-0 bg-gray-700 h-1/2 w-full"></span>
                         </span>
                     </div>
                 </div>
-                <!-- <div class="absolute top-0 right-0 left-0 bottom-0 opacity-80 -z-10 bg-gradient-to-br from-cyan-400 via-blue-300 to-transparent blur-md rounded-lg"> -->
                 
             </div>
 
