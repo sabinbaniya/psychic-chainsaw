@@ -20,11 +20,11 @@
 
 @keyframes fade_in_transition {
   0% {
-    top: 10vh;
+    top: 10px;
     opacity: 0;
   }
   100% {
-    top: 8vh;
+    top: 0px;
     opacity: 100%;
   }
 }
