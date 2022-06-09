@@ -10,7 +10,7 @@
 </head>
 <body class="min-h-screen flex justify-center items-center">
     <div>
-        <form action="./book.php" class="my-8 p-8 rounded-lg bg-gradient-to-l from-slate-300 to-slate-500 min-w-[300px] sm:min-w-[600px] w-full">
+        <form action="./book.php" class="my-8 p-8 rounded-lg bg-gradient-to-l from-stone-300 to-slate-500 min-w-[300px] sm:min-w-[600px] w-full">
             <div>
                 <label for="name" class="label_style">Full Name</label>
                 <input required autocomplete="off" type="text" name="name" id="name" class="input_style">
@@ -60,13 +60,13 @@
                     <option value="9">9</option>
                 </select>
             </div>
-            <div class="w-full sm:flex items-end justify-between">
-                <div class="">
+            <div class="w-full sm:flex items-end justify-between space-y-8 sm:space-y-0">
+                <div class="basis-2/3">
                     <label for="name" class="label_style">Number of Rooms</label>
                     <input required autocomplete="off" type="tel" name="rooms" id="rooms" class="input_style" value="1">
                 </div>
-                <div class="w-full ">
-                    <input type="submit" value="Book now" class="bg-blue-400 text-white font-semibold px-4 py-2 my-4 rounded-lg cursor-pointer hover:bg-blue-300">
+                <div class="w-full basis-1/3 flex justify-end">
+                    <input type="submit" value="Book now" class="bg-blue-400 sm:w-11/12 w-full text-white font-semibold h-8 rounded-lg cursor-pointer hover:bg-blue-300">
                 </div>
             </div>
         </form>
