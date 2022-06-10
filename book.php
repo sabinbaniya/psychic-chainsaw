@@ -10,7 +10,7 @@
     //Load Composer's autoloader
     require 'vendor/autoload.php';
 
-    // echo '<script>window.location.href = "./booking-completed.php"</script>';
+    echo '<script>window.location.href = "./booking-completed.php"</script>';
 
     $name = $_GET["name"];
     $email = $_GET["email"];
@@ -37,17 +37,18 @@
         //Server settings
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.postmarkapp.com';                       //Set the SMTP server to send through
+        $mail->Host       = 'smtp-mail.outlook.com';                       //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'dummymail@tutanota.de';              //SMTP username
+        $mail->Username   = 'baniya.sabinn@outlook.com';              //SMTP username
         $mail->Password   = file_get_contents("google_password.txt");//SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 26;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Port       = 587; 
+        $mail->SMTPSecure = "TLS";                                   //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom('sabin.chatapp@gmail.com', 'Sabin Baniya');
+        $mail->setFrom('baniya.sabinn@outlook.com', 'Sabin Baniya');
         $mail->addAddress($email, $name);     //Add a recipient    
-        $mail->addReplyTo('sabin.chatapp@gmail.com', 'Sabin Baniya');
+        $mail->addReplyTo('baniya.sabinn@outlook.com', 'Sabin Baniya');
 
         // //Attachments
         // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
@@ -84,7 +85,7 @@
                     "
                 >
                     <img
-                    src="https://unsplash.com/photos/BL61VV4p23w"
+                    src=""
                     alt="Hotel Name"
                     height="150px"
                     />
@@ -117,7 +118,7 @@
                 "
                 >
                 <img
-                    src="https://unsplash.com/photos/tB5yDgTvSIY"
+                    src=""
                     alt="Hotel name"
                     width="100px"
                 />
