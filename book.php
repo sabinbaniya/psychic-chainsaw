@@ -27,6 +27,7 @@
 
     $stmt->execute();
     $stmt->close();
+    $conn->close();
 
     // for sending mail to customer after booking is done 
 
