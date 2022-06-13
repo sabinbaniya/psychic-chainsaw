@@ -28,19 +28,13 @@ if (!isset($_SESSION["loggedin"])) {
         <nav class="hidden md:block">
             <ul class="flex space-x-8">
                 <li class="text-lg bg-gray-900 px-2 py-1 text-white rounded-lg transition-all">
-                    <a href="">Item 1</a>
+                    <a href="">Bookings</a>
                 </li>
                 <li class="text-lg px-2 py-1 hover:bg-gray-300 transition-all rounded-lg">
                     <a href="">Item 2</a>
                 </li>
                 <li class="text-lg px-2 py-1 hover:bg-gray-300 transition-all rounded-lg">
                     <a href="">Item 3</a>
-                </li>
-                <li class="text-lg px-2 py-1 hover:bg-gray-300 transition-all rounded-lg">
-                    <a href="">Item 4</a>
-                </li>
-                <li class="text-lg px-2 py-1 hover:bg-gray-300 transition-all rounded-lg">
-                    <a href="">Item 5</a>
                 </li>
             </ul>
         </nav>
@@ -59,11 +53,9 @@ if (!isset($_SESSION["loggedin"])) {
             </span>
 
             <div class="absolute z-50 pb-8 left-0 right-0 transition-all duration-300 peer-checked:top-28 md:hidden -top-[500px] rounded-sm space-y-4 flex flex-col w-11/12 mx-auto bg-gray-300 text-[#002635] text-center">
-                <a onclick="closeMenu()" class="py-2 mt-4" href="">Item 1</a>
+                <a onclick="closeMenu()" class="py-2 mt-4" href="">Bookings</a>
                 <a onclick="closeMenu()" class="py-2" href="">Item 2 </a>
                 <a onclick="closeMenu()" class="py-2" href="">Item 3 </a>
-                <a onclick="closeMenu()" class="py-2 mb-4" href="">Item 4</a>
-                <a onclick="closeMenu()" class="py-2 mb-4" href="">Item 5</a>
                 <button>
                     <a href="./logout.php" onclick="closeMenu()" class="border-2 my-2 px-6 py-2 inline-block rounded-lg border-red-500 font-semibold transition-all">Log Out</a>
                 </button>
@@ -72,7 +64,7 @@ if (!isset($_SESSION["loggedin"])) {
         <!-- mobile menu endss  -->
     </header>
     <!-- nav component ends  -->
-    <section class="max-w-[1400px] mx-auto px-8">
+    <section class="max-w-[1400px] mx-auto px-8 overflow-x-scroll">
         Bookings till now:
         <?php
         include_once("../db/connectDB.php");
@@ -83,18 +75,21 @@ if (!isset($_SESSION["loggedin"])) {
         if ($result->num_rows > 0) {
 
             echo "
-                    <table>
+                    <table class='mx-auto rounded-lg border border-collapse'>
+                    <thead class='bg-gray-800 text-white px-4 py-2'>
                         <tr>
-                            <th>Reservation Id</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Mobile</th>
-                            <th>Check in Date</th>
-                            <th>Check Out Date</th>
-                            <th>No of Adults</th>
-                            <th>No of Children</th>
-                            <th>No of Rooms</th>
+                            <th class='border p-4'>Reservation Id</th>
+                            <th class='border p-4'>Name</th>
+                            <th class='border p-4'>Email</th>
+                            <th class='border p-4'>Mobile</th>
+                            <th class='border p-4'>Check in Date</th>
+                            <th class='border p-4'>Check Out Date</th>
+                            <th class='border p-4'>No of Adults</th>
+                            <th class='border p-4'>No of Children</th>
+                            <th class='border p-4'>No of Rooms</th>
                         </tr>
+                    </thead>
+                    <tbody>
                     ";
 
             while ($row = $result->fetch_assoc()) {
@@ -108,18 +103,19 @@ if (!isset($_SESSION["loggedin"])) {
                 $noc = $row["no_of_children"];
                 $nor = $row["no_of_rooms"];
 
-                echo "<tr>";
-                echo "<td> $rsv_id </td>";
-                echo "<td> $name </td>";
-                echo "<td> $email </td>";
-                echo "<td> $mobile </td>";
-                echo "<td> $cid </td>";
-                echo "<td> $cod </td>";
-                echo "<td> $noa </td>";
-                echo "<td> $noc </td>";
-                echo "<td> $nor </td>";
+                echo "<tr class='border'>";
+                echo "<td class='border p-4' > $rsv_id </td>";
+                echo "<td class='border p-4' > $name </td>";
+                echo "<td class='border p-4' > $email </td>";
+                echo "<td class='border p-4' > $mobile </td>";
+                echo "<td class='border p-4' > $cid </td>";
+                echo "<td class='border p-4' > $cod </td>";
+                echo "<td class='border p-4' > $noa </td>";
+                echo "<td class='border p-4' > $noc </td>";
+                echo "<td class='border p-4' > $nor </td>";
                 echo "</tr>";
             }
+            echo "</tbody>";
             echo "</table>";
         } else {
             echo "No Bookings Found!";
