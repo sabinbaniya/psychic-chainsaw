@@ -1,7 +1,3 @@
-<?php
-include_once("./db/connectDB.php")
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -16,6 +16,7 @@
         <h1 class="text-3xl font-semibold my-4">Your Booking has been completed successfully.</h1>
         <p class="text-xl my-4">You will recieve a mail shortly with your reservation details</p>
         <p class="text-gray-500">Didn't see a mail from us ? Try checking spam folder</p>
+        <a href="./index.php" class="mt-4 inline-block"> Or <span class="underline underline-offset-2">Return Home</span></a>
     </div>
     
 </body>
