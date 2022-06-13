@@ -7,7 +7,7 @@ if (!isset($_POST["username"], $_POST["password"])) {
 require_once("../db/connectDB.php");
 session_start();
 
-if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
+if ($stmt = $conn->prepare('SELECT id, password, role FROM users WHERE username = ?')) {
     // Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
     $stmt->bind_param('s', $_POST['username']);
     $stmt->execute();
@@ -15,7 +15,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $password);
+        $stmt->bind_result($id, $password, $role);
         $stmt->fetch();
         // Account exists, now we verify the password.
         // Note: remember to use password_hash in your registration file to store the hashed passwords.
@@ -24,8 +24,12 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
             // Create sessions, so we know the user is logged in, they basically act like cookies but remember the data on the server.
             session_regenerate_id();
             $_SESSION['loggedin'] = TRUE;
+            $_SESSION["user_role"] = $role;
             $_SESSION['name'] = $_POST['username'];
             $_SESSION['id'] = $id;
+
+            echo "inside generate session";
+            echo $_SESSION["loggedin"];
 
             header("Location: ./index.php");
         } else {
