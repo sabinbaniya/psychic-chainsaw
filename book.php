@@ -1,64 +1,72 @@
 <?php
-    include_once("./db/connectDB.php");
+include_once("./db/connectDB.php");
 
-    //Import PHPMailer classes into the global namespace
-    //These must be at the top of your script, not inside a function
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\Exception;
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-    //Load Composer's autoloader
-    require 'vendor/autoload.php';
+//Load Composer's autoloader
+require 'vendor/autoload.php';
 
-    echo '<script>window.location.href = "./booking-completed.php"</script>';
+echo '<script>window.location.href = "./booking-completed.php"</script>';
 
-    $name = $_GET["name"];
-    $email = $_GET["email"];
-    $mobile = $_GET["number"];
-    $check_in_date = $_GET["check-in-date"];
-    $check_out_date = $_GET["check-out-date"];
-    $adults = $_GET["adults"];
-    $children = $_GET["children"];
-    $no_of_rooms = $_GET["rooms"];
-    $reservation_id = random_int(0, 2312312432599);
+$name = $_GET["name"];
+$email = $_GET["email"];
+$mobile = $_GET["number"];
+$check_in_date = $_GET["check-in-date"];
+$check_out_date = $_GET["check-out-date"];
+$adults = $_GET["adults"];
+$children = $_GET["children"];
+$no_of_rooms = $_GET["rooms"];
+$payment_option = $_GET["payment"];
+$booking_status = "pending";
+$payment_status = "pending";
+$reservation_id = random_int(0, 2312312432599);
 
-    $stmt = $conn->prepare("INSERT INTO BOOKINGS (reservation_id , name, email, mobile, check_in_date, check_out_date, no_of_adults, no_of_children, no_of_rooms) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("dssdssiii",$reservation_id, $name, $email, $mobile, $check_in_date, $check_out_date, $adults, $children, $no_of_rooms);
+if ($payment_option == "esewa") {
+    header("location: ./esewa.php");
+    return;
+}
 
-    $stmt->execute();
-    $stmt->close();
-    $conn->close();
+$stmt = $conn->prepare("INSERT INTO BOOKINGS (reservation_id , name, email, mobile, check_in_date, check_out_date, no_of_adults, no_of_children, no_of_rooms, payment_option, booking_status, payment_status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("dssdssiiisss", $reservation_id, $name, $email, $mobile, $check_in_date, $check_out_date, $adults, $children, $no_of_rooms, $payment_option, $booking_status, $payment_status);
 
-    // for sending mail to customer after booking is done 
+$stmt->execute();
+$stmt->close();
+$conn->close();
 
-    //Create an instance; passing `true` enables exceptions
-    $mail = new PHPMailer(true);
+// for sending mail to customer after booking is done 
 
-    try {
-        //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-        $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp-mail.outlook.com';                       //Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'baniya.sabinn@outlook.com';              //SMTP username
-        $mail->Password   = file_get_contents("google_password.txt");//SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 587; 
-        $mail->SMTPSecure = "TLS";                                   //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
 
-        //Recipients
-        $mail->setFrom('baniya.sabinn@outlook.com', 'Sabin Baniya');
-        $mail->addAddress($email, $name);     //Add a recipient    
-        $mail->addReplyTo('baniya.sabinn@outlook.com', 'Sabin Baniya');
+try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp-mail.outlook.com';                       //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'baniya.sabinn@outlook.com';              //SMTP username
+    $mail->Password   = file_get_contents("google_password.txt"); //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 587;
+    $mail->SMTPSecure = "TLS";                                   //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-        // //Attachments
-        // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+    //Recipients
+    $mail->setFrom('baniya.sabinn@outlook.com', 'Sabin Baniya');
+    $mail->addAddress($email, $name);     //Add a recipient    
+    $mail->addReplyTo('baniya.sabinn@outlook.com', 'Sabin Baniya');
 
-        //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Reservation Details regarding your booking from our website';
-        $mail->Body    = '
+    // //Attachments
+    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Reservation Details regarding your booking from our website';
+    $mail->Body    = '
             <head></head>
             <body
             style="
@@ -68,6 +76,14 @@
                 max-width: 700px;
             "
             >
+            <p style="font-size: 18px; margin: 40px auto">
+                This email is regarding the booking you made online on
+                <a href="#" style="color: black">website name</a>. <br />
+                Please confirm your booking my clicking on the confirm booking button down
+                below.<br />
+                If you didn\'t made any bookings you can safely ignore this email. For any
+                enquiries contact our front desk at: 982343241
+            </p>
             <div style="border: 2px solid black; border-radius: 10px">
                 <div
                 style="
@@ -96,7 +112,7 @@
                     <h1>Reservation Confirmed</h1>
                     <p style="font-size: 16px">
                     Your reservation number is :
-                    <span style="text-decoration: underline">'.$reservation_id.'</span>
+                    <span style="text-decoration: underline">' . $reservation_id . '</span>
                     </p>
                 </div>
                 </div>
@@ -131,40 +147,70 @@
                 </div>
                 <div>
                 <h2>Guest Name</h2>
-                <p style="font-size: 18px">'.$name.'</p>
-                <p style="font-size: 14px">'.$mobile.'</p>
+                <p style="font-size: 18px">' . $name . '</p>
+                <p style="font-size: 14px">' . $mobile . '</p>
                 </div>
                 <div style="display: flex">
                 <div style="margin-right: 20px">
                     <p style="font-size: 18px">Check-in Date</p>
-                    <p style="font-size: 16px; color: #505050">'.$check_in_date.'</p>
+                    <p style="font-size: 16px; color: #505050">' . $check_in_date . '</p>
                 </div>
                 <div style="margin-right: 20px">
                     <p style="font-size: 18px">Check-Out Date</p>
-                    <p style="font-size: 16px; color: #505050">'.$check_out_date.'</p>
+                    <p style="font-size: 16px; color: #505050">' . $check_out_date . '</p>
                 </div>
                 <div style="margin-right: 20px">
                     <p style="font-size: 18px">Adult</p>
-                    <p style="font-size: 16px; color: #505050">'.$adults.'</p>
+                    <p style="font-size: 16px; color: #505050">' . $adults . '</p>
                 </div>
                 <div style="margin-right: 20px">
                     <p style="font-size: 18px">Children</p>
-                    <p style="font-size: 16px; color: #505050">'.$children.'</p>
+                    <p style="font-size: 16px; color: #505050">' . $children . '</p>
                 </div>
                 <div style="margin-right: 20px">
                     <p style="font-size: 18px">Rooms</p>
-                    <p style="font-size: 16px; color: #505050">'.$no_of_rooms.'</p>
+                    <p style="font-size: 16px; color: #505050">' . $no_of_rooms . '</p>
+                </div>
+                <div style="margin-right: 20px">
+                    <p style="font-size: 18px">Booking Status</p>
+                    <p style="font-size: 16px; color: #505050">' . $booking_status . '</p>
+                </div>
+                <div style="margin-right: 20px">
+                    <p style="font-size: 18px">Payment Status</p>
+                    <p style="font-size: 16px; color: #505050">' . $payment_status . '</p>
                 </div>
                 </div>
+            </div>
+            <div
+                style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 20px auto;
+                "
+            >
+                <a href="./confirm-booking.php?id=' . $reservation_id . '">
+                <button
+                    style="
+                    background-color: #3b82f6;
+                    border-radius: 10px;
+                    border-width: 0px;
+                    padding: 20px 30px;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 18px;
+                    "
+                    type="button"
+                >
+                    Confirm Booking
+                </button>
+                </a>
             </div>
             </body>
 
         ';
-        $mail->AltBody = 'Please use a client-mail that supports html';
-        $mail->send();
-        
-    } catch (Exception $e) {
-        echo($mail->ErrorInfo);
-    }
-
-?>
+    $mail->AltBody = 'Please use a client-mail that supports html';
+    $mail->send();
+} catch (Exception $e) {
+    echo ($mail->ErrorInfo);
+}
