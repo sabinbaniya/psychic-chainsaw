@@ -10,7 +10,7 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
-echo '<script>window.location.href = "./booking-completed.php"</script>';
+// echo '<script>window.location.href = "./booking-completed.php"</script>';
 
 $name = $_GET["name"];
 $email = $_GET["email"];

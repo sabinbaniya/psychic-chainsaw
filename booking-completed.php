@@ -20,7 +20,6 @@
         <p class="text-gray-500">Didn't see a mail from us ? Try checking spam folder</p>
         <a href="./index.php" class="mt-4 inline-block"><span class="underline underline-offset-2">Return Home</span></a>
     </div>
-
 </body>
 
 </html>
