@@ -512,6 +512,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   bottom: 0px;
 }
 
+.-right-\[500px\] {
+  right: -500px;
+}
+
+.top-8 {
+  top: 2rem;
+}
+
 .-top-\[500px\] {
   top: -500px;
 }
@@ -679,6 +687,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-80 {
   width: 20rem;
+}
+
+.w-64 {
+  width: 16rem;
+}
+
+.w-96 {
+  width: 24rem;
 }
 
 .min-w-\[300px\] {
@@ -898,6 +914,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
+.bg-green-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
@@ -990,6 +1016,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.25rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1003,11 +1034,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 
 .pl-4 {
@@ -1077,9 +1103,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-green-900 {
+.text-green-50 {
   --tw-text-opacity: 1;
-  color: rgb(20 83 45 / var(--tw-text-opacity));
+  color: rgb(240 253 244 / var(--tw-text-opacity));
 }
 
 .text-black {
@@ -1127,16 +1153,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
-.text-green-100 {
-  --tw-text-opacity: 1;
-  color: rgb(220 252 231 / var(--tw-text-opacity));
-}
-
-.text-green-50 {
-  --tw-text-opacity: 1;
-  color: rgb(240 253 244 / var(--tw-text-opacity));
-}
-
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -1178,6 +1194,55 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.notification {
+  -webkit-animation: notification_animation 7s ease-in-out forwards;
+          animation: notification_animation 7s ease-in-out forwards;
+}
+
+@-webkit-keyframes notification_animation {
+  0% {
+    right: -500px;
+  }
+
+  50% {
+    right: 56px;
+  }
+
+  60% {
+    right: 25px;
+  }
+
+  80% {
+    right: 56px;
+  }
+
+  100% {
+    right: -500px;
+  }
+}
+
+@keyframes notification_animation {
+  0% {
+    right: -500px;
+  }
+
+  50% {
+    right: 56px;
+  }
+
+  60% {
+    right: 25px;
+  }
+
+  80% {
+    right: 56px;
+  }
+
+  100% {
+    right: -500px;
+  }
 }
 
 .label_style {

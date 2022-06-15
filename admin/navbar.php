@@ -27,7 +27,7 @@ echo '
         </nav>
         <div class="hidden md:block">
             <button>
-                <a href="#" class="border-[3px] px-6 py-2 rounded-lg border-red-500 hover:bg-red-700 hover:text-white font-semibold transition-all">Log Out</a>
+                <a href="./logout.php" class="border-[3px] px-6 py-2 rounded-lg border-red-500 hover:bg-red-700 hover:text-white font-semibold transition-all">Log Out</a>
             </button>
         </div>
         <!-- menu for desktop ends -->

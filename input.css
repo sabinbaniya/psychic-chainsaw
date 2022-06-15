@@ -2,6 +2,32 @@
 @tailwind utilities;
 @tailwind components;
 
+.notification {
+  animation: notification_animation 7s ease-in-out forwards;
+}
+
+@keyframes notification_animation {
+  0% {
+    right: -500px;
+  }
+
+  50% {
+    right: 56px;
+  }
+
+  60% {
+    right: 25px;
+  }
+
+  80% {
+    right: 56px;
+  }
+
+  100% {
+    right: -500px;
+  }
+}
+
 .label_style {
   @apply text-white font-semibold block my-4;
 }
