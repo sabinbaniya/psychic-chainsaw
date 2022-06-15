@@ -1,8 +1,11 @@
+console.log("first");
 const animatingUl = document.getElementById("animating_ul");
 const Location = document.getElementById("location");
 const hour = document.getElementById("hour");
 const minute = document.getElementById("minute");
+console.log(animatingUl);
 const childArr = Array.from(animatingUl.childNodes);
+console.log(childArr, "hi");
 
 let j = 0;
 
