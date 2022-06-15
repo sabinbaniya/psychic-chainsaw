@@ -1,4 +1,13 @@
 <?php
+session_start();
+if (!isset($_SESSION["loggedin"])) {
+    header("Location: ./index.php");
+    exit();
+}
+if ($_SESSION["user_role"] == "manager") {
+    header("Location: ./index.php");
+    exit();
+}
 if (isset($_POST["create"])) {
     require_once("../db/connectDB.php");
     require_once("./helpers/random_str.php");
@@ -18,8 +27,7 @@ if (isset($_POST["create"])) {
     $stmt->execute();
     if ($stmt->affected_rows === 1) {
         $m = send_email($name, $email, $username, $unhashed_pw);
-        echo $m;
-        header("Location: ./createuser.php?success=true");
+        echo "<script>window.location.href=./createuser.php?success=true</script>";
         exit();
     } else {
         header("Location: ./createuser.php?success=false");

@@ -1,7 +1,6 @@
 <?php
 
 $active;
-
 if (strpos($_SERVER["REQUEST_URI"], "createuser") !== false) {
     $active = "createuser";
 } else {
@@ -19,10 +18,9 @@ echo '
             <ul class="flex space-x-8">
                 <li>
                     <a href="./index.php" class="text-lg inline-block ' . ($active == "bookings" ? "bg-gray-900 text-white" : "hover:bg-gray-300") . ' px-2 py-1 rounded-lg transition-all">Bookings</a>
-                </li>
-                <li>
-                    <a href="./createuser.php"  class="text-lg inline-block px-2 py-1  ' . ($active == "createuser" ? "bg-gray-900 text-white" : "hover:bg-gray-300") . ' transition-all rounded-lg">Create User</a>
-                </li>
+                </li> ' . ($_SESSION["user_role"] == "admin" ? "<li>
+                    <a href='./createuser.php'  class='text-lg inline-block px-2 py-1  ' . ($active == 'createuser' ? 'bg-gray-900 text-white' : 'hover:bg-gray-300') . ' transition-all rounded-lg'>Create User</a>
+                </li>" : null) . '
             </ul>
         </nav>
         <div class="hidden md:block">

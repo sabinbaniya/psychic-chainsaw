@@ -119,14 +119,14 @@ if (!isset($_SESSION["loggedin"])) {
                 echo "<td class='border p-4 cursor-default capitalize' > $payment_status </td>";
                 echo "<td class='border p-4 cursor-default' > 
                         <a href='./editbooking.php?id=$rsv_id' title='Edit Reservation Details' class='hover:bg-gray-500 hover:text-white px-2 py-1 rounded-lg'>Edit</a> 
-                        <a href='./deletebooking.php?id=$rsv_id' title='Delete Reservation' class='hover:bg-red-500 hover:text-white px-2 py-1 rounded-lg'>Delete</a> 
+                        " . ($_SESSION["user_role"] == "admin" ? "<a href='./deletebooking.php?id=$rsv_id' title='Delete Reservation' class='hover:bg-red-500 hover:text-white px-2 py-1 rounded-lg'>Delete</a> " : null) . "
                     </td>";
                 echo "</tr>";
             }
             echo "</tbody>";
             echo "</table>";
         } else {
-            echo "No Bookings Found!";
+            echo "<p class='text-center my-4 text-xl font-bold text-red-500'>No Bookings Found!</p>";
         }
         $conn->close();
         ?>
