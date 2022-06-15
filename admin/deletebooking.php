@@ -17,9 +17,9 @@ if ($stmt = $conn->prepare('DELETE FROM bookings WHERE reservation_id = ?')) {
     $id = doubleval($_GET["id"]);
     $stmt->bind_param('d', $id);
     $stmt->execute();
-    header("Location: ./index.php?action=delete&success=true");
+    header("Location: ./index.php?success=true");
     exit();
 } else {
-    header("Location: ./index.php?action=delete&success=false");
+    header("Location: ./index.php?success=false");
     exit();
 }

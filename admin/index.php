@@ -16,10 +16,26 @@ if (!isset($_SESSION["loggedin"])) {
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body class="overflow-x-hidden">
     <?php
     require("./navbar.php");
+    if (isset($_GET["success"])) {
+        if ($_GET["success"] === "true") {
+            echo '
+            <div class="w-64 h-10 bg-green-400 flex justify-center items-center text-center rounded-lg absolute -right-[200px] top-16 notification">
+                <p class="text-white text-md">Successfully Deleted Record.</p>
+            </div>
+            ';
+        } else {
+            echo '
+            <div class="w-96 h-10 bg-red-400 flex justify-center items-center text-center rounded-lg absolute -right-[500px] top-16 notification">
+                <p class="text-white text-md">Couldn\'t delete record. Please try again later!</p>
+            </div>
+            ';
+        }
+    }
     ?>
+
     <section class="max-w-[1400px] mx-auto px-8 overflow-x-auto">
         <p class="text-center my-4 text-lg font-medium text-gray-600">Bookings as of : <span class="text-gray-800"> <?= date("Y-m-d")  ?></span></p>
         <?php

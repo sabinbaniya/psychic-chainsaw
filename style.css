@@ -524,6 +524,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: -500px;
 }
 
+.-right-\[200px\] {
+  right: -200px;
+}
+
+.top-12 {
+  top: 3rem;
+}
+
+.top-16 {
+  top: 4rem;
+}
+
+.-right-\[300px\] {
+  right: -300px;
+}
+
+.-right-\[400px\] {
+  right: -400px;
+}
+
 .z-50 {
   z-index: 50;
 }
