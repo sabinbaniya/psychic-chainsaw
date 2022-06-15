@@ -1203,7 +1203,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 @-webkit-keyframes notification_animation {
   0% {
-    right: -500px;
+    right: -250px;
   }
 
   50% {
@@ -1225,7 +1225,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 @keyframes notification_animation {
   0% {
-    right: -500px;
+    right: -250px;
   }
 
   50% {

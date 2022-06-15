@@ -80,9 +80,9 @@ if (!isset($_SESSION["loggedin"])) {
                 echo "<td class='border p-4 cursor-default' > $payment_option </td>";
                 echo "<td class='border p-4 cursor-default' > $payment_status </td>";
                 echo "<td class='border p-4 cursor-default' > 
-                    <a href='./editbooking.php?id=$rsv_id' title='Edit Reservation Details'>Edit</a> 
-                    <a title='Delete Reservation'>Delete</a> 
-                </td>";
+                        <a href='./editbooking.php?id=$rsv_id' title='Edit Reservation Details'>Edit</a> 
+                        <a href='./deletebooking.php?id=$rsv_id' title='Delete Reservation'>Delete</a> 
+                    </td>";
                 echo "</tr>";
             }
             echo "</tbody>";

@@ -185,8 +185,6 @@ if (!isset($_GET["success"])) {
                 </a>
                 '
                 ?>
-
-
             </div>
         </form>
     </section>
