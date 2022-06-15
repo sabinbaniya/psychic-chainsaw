@@ -12,7 +12,7 @@ echo '
  <!-- nav component starts  -->
     <header class="flex justify-between items-center h-20 max-w-[1400px] mx-auto px-8">
         <div>
-            <p class="text-gray-600 text-2xl font-bold">Admin Panel</p>
+            <a href="./index.php" class="text-gray-600 text-2xl font-bold">Admin Panel</a>
         </div>
         <!-- menu for desktop starts -->
         <nav class="hidden md:block">

@@ -14,6 +14,28 @@ if (!isset($_SESSION["loggedin"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 50px;
+
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
 </head>
 
 <body class="overflow-x-hidden">
@@ -50,19 +72,19 @@ if (!isset($_SESSION["loggedin"])) {
                     <table class='mx-auto rounded-lg border border-collapse'>
                     <thead class='bg-gray-800 text-white'>
                         <tr>
-                            <th class='border p-4 cursor-default'>Reservation Id</th>
-                            <th class='border p-4 cursor-default'>Name</th>
-                            <th class='border p-4 cursor-default'>Email</th>
-                            <th class='border p-4 cursor-default'>Mobile</th>
-                            <th class='border p-4 cursor-default'>Check in Date</th>
-                            <th class='border p-4 cursor-default'>Check Out Date</th>
-                            <th class='border p-4 cursor-default'>No of Adults</th>
-                            <th class='border p-4 cursor-default'>No of Children</th>
-                            <th class='border p-4 cursor-default'>No of Rooms</th>
-                            <th class='border p-4 cursor-default'>Booking Status</th>
-                            <th class='border p-4 cursor-default'>Payment Method</th>
-                            <th class='border p-4 cursor-default'>Payment Status</th>
-                            <th class='border p-4 cursor-default'>Options</th>
+                            <th class='border px-4 py-1 cursor-default'>Reservation Id</th>
+                            <th class='border px-4 py-1 cursor-default'>Name</th>
+                            <th class='border px-4 py-1 cursor-default'>Email</th>
+                            <th class='border px-4 py-1 cursor-default'>Mobile</th>
+                            <th class='border px-4 py-1 cursor-default'>Check in Date</th>
+                            <th class='border px-4 py-1 cursor-default'>Check Out Date</th>
+                            <th class='border px-4 py-1 cursor-default'>No of Adults</th>
+                            <th class='border px-4 py-1 cursor-default'>No of Children</th>
+                            <th class='border px-4 py-1 cursor-default'>No of Rooms</th>
+                            <th class='border px-4 py-1 cursor-default'>Booking Status</th>
+                            <th class='border px-4 py-1 cursor-default'>Payment Method</th>
+                            <th class='border px-4 py-1 cursor-default'>Payment Status</th>
+                            <th class='border px-4 py-1 cursor-default'>Options</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -92,12 +114,12 @@ if (!isset($_SESSION["loggedin"])) {
                 echo "<td class='border p-4 cursor-default' > $noa </td>";
                 echo "<td class='border p-4 cursor-default' > $noc </td>";
                 echo "<td class='border p-4 cursor-default' > $nor </td>";
-                echo "<td class='border p-4 cursor-default' > $booking_status </td>";
-                echo "<td class='border p-4 cursor-default' > $payment_option </td>";
-                echo "<td class='border p-4 cursor-default' > $payment_status </td>";
+                echo "<td class='border p-4 cursor-default capitalize' > $booking_status </td>";
+                echo "<td class='border p-4 cursor-default capitalize' > $payment_option </td>";
+                echo "<td class='border p-4 cursor-default capitalize' > $payment_status </td>";
                 echo "<td class='border p-4 cursor-default' > 
-                        <a href='./editbooking.php?id=$rsv_id' title='Edit Reservation Details'>Edit</a> 
-                        <a href='./deletebooking.php?id=$rsv_id' title='Delete Reservation'>Delete</a> 
+                        <a href='./editbooking.php?id=$rsv_id' title='Edit Reservation Details' class='hover:bg-gray-500 hover:text-white px-2 py-1 rounded-lg'>Edit</a> 
+                        <a href='./deletebooking.php?id=$rsv_id' title='Delete Reservation' class='hover:bg-red-500 hover:text-white px-2 py-1 rounded-lg'>Delete</a> 
                     </td>";
                 echo "</tr>";
             }
