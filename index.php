@@ -106,8 +106,6 @@
 
     </div>
 
-
-    </div>
   </section>
   <script>
     function closeMenu() {
