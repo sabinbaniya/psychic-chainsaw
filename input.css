@@ -3,7 +3,7 @@
 @tailwind components;
 
 .notification {
-  animation: notification_animation 7s ease-in-out forwards;
+  animation: notification_animation 5s ease-out forwards;
 }
 
 @keyframes notification_animation {

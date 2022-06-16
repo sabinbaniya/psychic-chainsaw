@@ -4,7 +4,7 @@ if (!isset($_SESSION["loggedin"])) {
     header("Location: ./index.php");
     exit();
 }
-if ($_SESSION["user_role"] == "manager") {
+if ($_SESSION["user_role"] != "admin") {
     header("Location: ./index.php");
     exit();
 }

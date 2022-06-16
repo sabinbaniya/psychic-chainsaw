@@ -8,6 +8,11 @@ if (!isset($_SESSION["loggedin"])) {
     exit;
 }
 
+if ($_SESSION["user_role"] != "admin") {
+    header("Location: ./index.php");
+    exit;
+}
+
 if (!isset($_GET["id"])) {
     header("Location: ./index.php");
     exit;

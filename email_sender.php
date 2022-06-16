@@ -35,8 +35,8 @@ function send_email($name, $email, $username, $password)
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Login Details for Website\'s Admin Panel';
-        $mail->Body    = "Here\'s your login details, username -> $username, password -> $password, name -> $name, email -> $email";
+        $mail->Subject = "Login Details for Website\'s Admin Panel for $name";
+        $mail->Body    = "Here\'s your login details for the admin panel: <hr/><br/>, username: $username  <br/> password : $password";
         $mail->AltBody = 'Please use a client-mail that supports html';
         $mail->send();
         return true;
