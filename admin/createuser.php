@@ -70,7 +70,7 @@ if (isset($_POST["create"])) {
             }
         }
         ?>
-        <h3 class="my-6 text-2xl text-gray-700 font-semibold">Create a user</h3>
+        <h3 class="my-6 text-2xl text-gray-700 font-semibold">Create a user for Admin Panel</h3>
         <form action="./createuser.php" class="p-8 rounded-lg bg-white w-80 text-gray-600" method="POST">
 
             <div class="w-full">
