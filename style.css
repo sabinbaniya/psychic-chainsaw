@@ -570,6 +570,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.5rem;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -947,10 +952,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
-.bg-gradient-to-l {
-  background-image: linear-gradient(to left, var(--tw-gradient-stops));
-}
-
 .bg-\[url\(\'\.\/assets\/images\/hero\.jpg\'\)\] {
   background-image: url('./assets/images/hero.jpg');
 }
@@ -959,9 +960,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
-.from-stone-300 {
-  --tw-gradient-from: #d6d3d1;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(214 211 209 / 0));
+.bg-gradient-to-l {
+  background-image: linear-gradient(to left, var(--tw-gradient-stops));
 }
 
 .from-green-300 {
@@ -969,16 +969,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(134 239 172 / 0));
 }
 
+.from-stone-300 {
+  --tw-gradient-from: #d6d3d1;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(214 211 209 / 0));
+}
+
 .via-blue-200 {
   --tw-gradient-stops: var(--tw-gradient-from), #bfdbfe, var(--tw-gradient-to, rgb(191 219 254 / 0));
 }
 
-.to-slate-500 {
-  --tw-gradient-to: #64748b;
-}
-
 .to-transparent {
   --tw-gradient-to: transparent;
+}
+
+.to-slate-500 {
+  --tw-gradient-to: #64748b;
 }
 
 .bg-cover {
@@ -1044,6 +1049,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 0.5rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pl-4 {
   padding-left: 1rem;
 }
@@ -1095,6 +1105,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .font-black {
   font-weight: 900;
+}
+
+.font-light {
+  font-weight: 300;
 }
 
 .capitalize {
@@ -1165,11 +1179,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
-.text-red-300 {
-  --tw-text-opacity: 1;
-  color: rgb(252 165 165 / var(--tw-text-opacity));
-}
-
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
@@ -1219,8 +1228,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .notification {
-  -webkit-animation: notification_animation 7s ease-in-out forwards;
-          animation: notification_animation 7s ease-in-out forwards;
+  -webkit-animation: notification_animation 5s ease-out forwards;
+          animation: notification_animation 5s ease-out forwards;
 }
 
 @-webkit-keyframes notification_animation {

@@ -12,7 +12,7 @@
 
 <body class="min-h-screen flex justify-center items-center">
     <div>
-        <form action="./book.php" class="my-8 p-8 rounded-lg bg-gradient-to-l from-stone-300 to-slate-500 min-w-[300px] sm:min-w-[600px] max-w-[622px]" onsubmit="showLoader()">
+        <form action="./book.php" class="my-8 p-8 rounded-lg min-w-[300px] sm:min-w-[600px] max-w-[622px]" style="background-color: #abc;" onsubmit="showLoader()">
             <div class="max-w-[548px]">
                 <label for="name" class="label_style">Full Name</label>
                 <input required autocomplete="off" type="text" name="name" id="name" class="input_style">
@@ -72,6 +72,14 @@
                 <select required name="payment" id="payment" class="input_style">
                     <option value="offline">Offline Payment</option>
                     <option value="esewa">Esewa</option>
+                </select>
+            </div>
+            <div class="max-w-[548px]">
+                <label for="room_type" class="label_style">Room Type</label>
+                <select required name="room_type" id="room_type" class="input_style">
+                    <option value="single">Single</option>
+                    <option value="double">Double</option>
+                    <option value="deluxe">Deluxe</option>
                 </select>
             </div>
             <div class="w-full mt-8">
