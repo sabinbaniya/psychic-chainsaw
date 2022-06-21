@@ -4,6 +4,30 @@ if (!isset($_SESSION["loggedin"])) {
     header("Location: ../index.php");
     exit;
 }
+
+
+function isSelected($val)
+{
+    if (!isset($_GET["entries"])) {
+        return false;
+    }
+
+    $entries = $_GET["entries"];
+
+    if ($entries < 0) {
+        $entries = 10;
+    }
+    if ($entries > 100) {
+        $entries = 100;
+    }
+
+    if ($val === $entries) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,11 +83,38 @@ if (!isset($_SESSION["loggedin"])) {
     ?>
 
     <section class="max-w-[1400px] mx-auto px-8 overflow-x-auto">
-        <p class="text-center my-4 text-lg font-medium text-gray-600">Bookings as of : <span class="text-gray-800"> <?= date("Y-m-d")  ?></span></p>
+        <div class="flex items-center justify-center space-x-10">
+            <span class="inline-block">
+                <form action="./index.php" class="inline-block" id="entriesForm">
+                    <label for="entries">Show
+                    </label>
+                    <select required name="entries" id="entries" class="inline-block outline outline-gray-300 mx-2" onchange="document.getElementById('entriesForm').submit()">
+                        <option value="10" <?= isSelected("10") ? "selected" : "" ?>> 10</option>
+                        <option value="20" <?= isSelected("20") ? "selected" : "" ?>> 20</option>
+                        <option value="50" <?= isSelected("50") ? "selected" : "" ?>> 50</option>
+                        <option value="100" <?= isSelected("100") ? "selected" : "" ?>> 100</option>
+                    </select>
+                    <span>entries</span>
+                </form>
+            </span>
+            <p class="text-center my-4 text-lg font-medium text-gray-600 inline-block">Bookings as of : <span class="text-gray-800"> <?= date("Y-m-d")  ?></span></p>
+        </div>
+
         <?php
         include_once("../db/connectDB.php");
+        if (isset($_GET["entries"])) {
+            $entries = intval($_GET["entries"]);
+            if ($entries < 0) {
+                $entries = 10;
+            }
+            if ($entries > 100) {
+                $entries = 100;
+            }
+            $stmt = "SELECT * FROM bookings ORDER BY ID DESC LIMIT $entries";
+        } else {
+            $stmt = "SELECT * FROM bookings ORDER BY ID DESC LIMIT 10";
+        }
 
-        $stmt = "SELECT * FROM bookings ORDER BY ID DESC";
         $result = $conn->query($stmt);
 
         if ($result->num_rows > 0) {
@@ -73,6 +124,7 @@ if (!isset($_SESSION["loggedin"])) {
                     <thead class='bg-gray-800 text-white'>
                         <tr>
                             <th class='border px-4 py-1 cursor-default'>Reservation Id</th>
+                            <th class='border px-4 py-1 cursor-default'>Room type</th>
                             <th class='border px-4 py-1 cursor-default'>Name</th>
                             <th class='border px-4 py-1 cursor-default'>Email</th>
                             <th class='border px-4 py-1 cursor-default'>Mobile</th>
@@ -103,9 +155,11 @@ if (!isset($_SESSION["loggedin"])) {
                 $booking_status = $row["booking_status"];
                 $payment_option = $row["payment_option"];
                 $payment_status = $row["payment_status"];
+                $room_type = $row["room_type"];
 
                 echo "<tr class='border hover:bg-gray-200'>";
                 echo "<td class='border p-4 cursor-default' > $rsv_id </td>";
+                echo "<td class='border p-4 cursor-default' > $room_type </td>";
                 echo "<td class='border p-4 cursor-default' > $name </td>";
                 echo "<td class='border p-4 cursor-default' > $email </td>";
                 echo "<td class='border p-4 cursor-default' > $mobile </td>";

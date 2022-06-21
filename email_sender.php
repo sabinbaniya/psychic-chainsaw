@@ -159,43 +159,45 @@ function send_confirmation_email($name, $email, $reservation_id, $mobile, $check
                     <p style="font-size: 18px">' . $name . '</p>
                     <p style="font-size: 14px">' . $mobile . '</p>
                 </div>
-                <div style="display: grid; grid-template-columns: auto auto auto auto auto">
-                    <div style="margin-right: 20px">
+                <div style="">
+                    <span style="margin-right: 20px">
                         <p style="font-size: 18px">Check-in Date</p>
                         <p style="font-size: 16px; color: #505050">' . $check_in_date . '</p>
-                    </div>
-                    <div style="margin-right: 20px">
+                    </span>
+                    <span style="margin-right: 20px">
                         <p style="font-size: 18px">Check-Out Date</p>
                         <p style="font-size: 16px; color: #505050">' . $check_out_date . '</p>
-                    </div>
-                    <div style="margin-right: 20px">
+                    </span>
+                    <span style="margin-right: 20px">
                         <p style="font-size: 18px">Adult</p>
                         <p style="font-size: 16px; color: #505050">' . $adults . '</p>
-                    </div>
-                    <div style="margin-right: 20px">
+                    </span>
+                    <span style="margin-right: 20px">
                         <p style="font-size: 18px">Children</p>
                         <p style="font-size: 16px; color: #505050">' . $children . '</p>
-                    </div>
-                    <div style="margin-right: 20px">
+                    </span>
+                    <span style="margin-right: 20px">
                         <p style="font-size: 18px">Rooms</p>
                         <p style="font-size: 16px; color: #505050">' . $no_of_rooms . '</p>
-                    </div>
-                    <div style="margin-right: 20px">
+                    </span>
+                </div>
+                <div>
+                    <span style="margin-right: 20px">
                         <p style="font-size: 18px">Booking Status</p>
                         <p style="font-size: 16px; color: #505050; text-transform: capitalize">' . $booking_status . '</p>
-                    </div>
-                    <div style="margin-right: 20px">
+                    </span>
+                    <span style="margin-right: 20px">
                         <p style="font-size: 18px">Payment Status</p>
                         <p style="font-size: 16px; color: #505050; text-transform: capitalize">' . $payment_status . '</p>
-                    </div>
-                    <div style="margin-right: 20px">
+                    </span>
+                    <span style="margin-right: 20px">
                         <p style="font-size: 18px">Payment Option</p>
                         <p style="font-size: 16px; color: #505050; text-transform: capitalize">' . $payment_option . '</p>
-                    </div>
-                    <div style="margin-right: 20px">
+                    </span>
+                    <span style="margin-right: 20px">
                         <p style="font-size: 18px">Room Type</p>
                         <p style="font-size: 16px; color: #505050; text-transform: capitalize">' . $room_type . '</p>
-                    </div>
+                    </span>
                 </div>
             </div>
             <div
@@ -312,43 +314,45 @@ function send_confirmation_email($name, $email, $reservation_id, $mobile, $check
                 <p style="font-size: 18px">' . $name . '</p>
                 <p style="font-size: 14px">' . $mobile . '</p>
                 </div>
-                <div style="display: grid; grid-template-columns: auto auto auto auto auto;">
-                <div style="margin-right: 20px">
-                    <p style="font-size: 18px">Check-in Date</p>
-                    <p style="font-size: 16px; color: #505050">' . $check_in_date . '</p>
+                <div>
+                    <span style="margin-right: 20px">
+                        <p style="font-size: 18px">Check-in Date</p>
+                        <p style="font-size: 16px; color: #505050">' . $check_in_date . '</p>
+                    </span>
+                    <span style="margin-right: 20px">
+                        <p style="font-size: 18px">Check-Out Date</p>
+                        <p style="font-size: 16px; color: #505050">' . $check_out_date . '</p>
+                    </span>
+                    <span style="margin-right: 20px">
+                        <p style="font-size: 18px">Adult</p>
+                        <p style="font-size: 16px; color: #505050">' . $adults . '</p>
+                    </span>
+                    <span style="margin-right: 20px">
+                        <p style="font-size: 18px">Children</p>
+                        <p style="font-size: 16px; color: #505050">' . $children . '</p>
+                    </span>
+                    <span style="margin-right: 20px">
+                        <p style="font-size: 18px">Rooms</p>
+                        <p style="font-size: 16px; color: #505050">' . $no_of_rooms . '</p>
+                    </span>
                 </div>
-                <div style="margin-right: 20px">
-                    <p style="font-size: 18px">Check-Out Date</p>
-                    <p style="font-size: 16px; color: #505050">' . $check_out_date . '</p>
-                </div>
-                <div style="margin-right: 20px">
-                    <p style="font-size: 18px">Adult</p>
-                    <p style="font-size: 16px; color: #505050">' . $adults . '</p>
-                </div>
-                <div style="margin-right: 20px">
-                    <p style="font-size: 18px">Children</p>
-                    <p style="font-size: 16px; color: #505050">' . $children . '</p>
-                </div>
-                <div style="margin-right: 20px">
-                    <p style="font-size: 18px">Rooms</p>
-                    <p style="font-size: 16px; color: #505050">' . $no_of_rooms . '</p>
-                </div>
-                <div style="margin-right: 20px">
-                    <p style="font-size: 18px">Booking Status</p>
-                    <p style="font-size: 16px; color: #505050; text-transform: capitalize">' . $booking_status . '</p>
-                </div>
-                <div style="margin-right: 20px">
-                    <p style="font-size: 18px">Payment Status</p>
-                    <p style="font-size: 16px; color: #505050; text-transform: capitalize">' . $payment_status . '</p>
-                </div>
-                <div style="margin-right: 20px">
-                    <p style="font-size: 18px">Payment Option</p>
-                    <p style="font-size: 16px; color: #505050; text-transform: capitalize">' . $payment_option . '</p>
-                </div>
-                <div style="margin-right: 20px">
-                    <p style="font-size: 18px">Room Type</p>
-                    <p style="font-size: 16px; color: #505050; text-transform: capitalize">' . $room_type . '</p>
-                </div>
+                <div>
+                    <span style="margin-right: 20px">
+                        <p style="font-size: 18px">Booking Status</p>
+                        <p style="font-size: 16px; color: #505050; text-transform: capitalize">' . $booking_status . '</p>
+                    </span>
+                    <span style="margin-right: 20px">
+                        <p style="font-size: 18px">Payment Status</p>
+                        <p style="font-size: 16px; color: #505050; text-transform: capitalize">' . $payment_status . '</p>
+                    </span>
+                    <span style="margin-right: 20px">
+                        <p style="font-size: 18px">Payment Option</p>
+                        <p style="font-size: 16px; color: #505050; text-transform: capitalize">' . $payment_option . '</p>
+                    </span>
+                    <span style="margin-right: 20px">
+                        <p style="font-size: 18px">Room Type</p>
+                        <p style="font-size: 16px; color: #505050; text-transform: capitalize">' . $room_type . '</p>
+                    </span>
                 </div>
             </div>
             </body>

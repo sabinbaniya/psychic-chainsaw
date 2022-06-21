@@ -186,6 +186,13 @@ if (!isset($_GET["success"])) {
                 '
                 ?>
             </div>
+            <div class="w-full mt-8">
+                <a href="./index.php">
+                    <button type="button" id="btn" class=" bg-red-500  hover:bg-red-400 w-full text-white font-semibold py-2 rounded-lg cursor-pointer flex justify-center items-center">
+                        Cancel
+                    </button>
+                </a>
+            </div>
         </form>
     </section>
 </body>
