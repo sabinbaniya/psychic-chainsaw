@@ -12,6 +12,24 @@ if ($stmt = $conn->prepare('SELECT id, password, role FROM users WHERE username 
     $stmt->execute();
     $stmt->store_result();
 
+    if ($stmt->num_rows === 0) {
+        $username = "admin@destination";
+        $unhashedpw = "destin@tion009";
+        $role = "admin";
+        $name = "destination";
+
+        $hashedpw = password_hash($unhashedpw, PASSWORD_DEFAULT);
+
+        $stmt = $conn->prepare("INSERT INTO users (name, username, password, role) VALUES (?,?,?,?)");
+        $stmt->bind_param("ssss", $name, $username, $hashedpw, $role);
+        $stmt->execute();
+        if ($stmt->num_rows === 1) {
+            header("Location: ./login.php?newusercreated=true");
+        } else {
+            header("Location: ./login.php?newusercreated=false");
+        }
+    }
+
     if ($stmt->num_rows > 0) {
         $stmt->bind_result($id, $password, $role);
         $stmt->fetch();
