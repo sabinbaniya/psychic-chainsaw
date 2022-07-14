@@ -2,6 +2,11 @@
 @tailwind utilities;
 @tailwind components;
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 .notification {
   animation: notification_animation 5s ease-out forwards;
 }

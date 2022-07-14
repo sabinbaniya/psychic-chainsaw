@@ -66,12 +66,10 @@
             </span>
           </div>
         </div>
-
       </div>
-
     </section>
   </section>
-  <section class="mb-20 flex mx-4 flex-col-reverse lg:flex-row lg:space-x-8 justify-start items-start">
+  <section class="mb-10 flex mx-4 flex-col-reverse lg:flex-row lg:space-x-8 justify-start items-start">
     <div class="grid grid-cols-4 gap-x-4 grid-rows-3 basis-1/2">
       <div class="row-span-2 col-span-4 h-80">
         <img id="selectedImage" src="./assets/images/hotel-1.jpg" class="rounded-lg h-full w-full">
@@ -86,11 +84,47 @@
     <div class="lg:basis-1/3 space-y-4 lg:pl-12 mb-8 lg:mb-0">
       <p class="font-bold text-2xl md:text-4xl text-gray-700">A Sneak Peek of our Hotel</p>
       <p class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam neque nulla tempore recusandae iure sint, quis mollitia enim pariatur inventore! Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam neque nulla tempore recusandae iure sint, quis mollitia enim pariatur inventore!</p>
-      <a href="#testimonial" class="hover-underline-animation text-indigo-600 font-bold after:bg-indigo-600">See what others have to say about us <i class="fa-solid fa-chevron-right"></i></a>
-      <button class="bg-transparent border-2 border-gray-400 rounded-md text-gray-600 block px-4 py-2 hover:bg-gray-100 font-bold">Explore Rooms</button>
+      <a href="#testimonial" class="block hover-underline-animation text-indigo-600 font-bold after:bg-indigo-600">See what others have to say about us <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="#room" class="pl-5 block w-40 bg-transparent border-2 border-gray-400 rounded-md text-gray-600 px-4 py-2 hover:bg-gray-100 font-bold">Explore Rooms</a>
     </div>
   </section>
-  <section>
+  <div id="room" class="h-10"></div>
+  <section class="mx-4 mb-20">
+    <h3 class="text-3xl md:text-5xl font-bold text-gray-800 sm:text-left text-center">Explore Our Room Options</h3>
+    <div class="grid sm:grid-cols-2 sm:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1 grid-cols-1 grid-rows-4 gap-6 place-items-center my-10">
+      <div class="relative overflow-hidden rounded-2xl max-h-96 max-w-xs group">
+        <img src="./assets/images/room-1.jpg">
+        <div class="space-y-2 absolute bottom-0 left-0 backdrop-blur-md p-4 text-gray-200 group-hover:-bottom-96 transition-all duration-500" style="background: rgba(0,0,0,0.3);">
+          <p class="font-bold text-gray-200 text-lg drop-shadow-sm border-b border-gray-300">Standard Room</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe veritatis molestias repellat adipisci reiciendis</p>
+          <p><i class="fa-solid fa-money-bill-1-wave"></i> NRS. 1000</p>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded-2xl max-h-96 max-w-xs group">
+        <img src="./assets/images/room-2.jpg">
+        <div class="space-y-2 absolute bottom-0 left-0 backdrop-blur-md p-4 text-gray-200 group-hover:-bottom-96 transition-all duration-500" style="background: rgba(0,0,0,0.3);">
+          <p class="font-bold text-gray-200 text-lg drop-shadow-sm border-b border-gray-300">Deluxe Room</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe veritatis molestias repellat adipisci reiciendis</p>
+          <p><i class="fa-solid fa-money-bill-1-wave"></i> NRS. 1200</p>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded-2xl max-h-96 max-w-xs group">
+        <img src="./assets/images/room-3.jpg">
+        <div class="space-y-2 absolute bottom-0 left-0 backdrop-blur-md p-4  text-gray-200 group-hover:-bottom-96 transition-all duration-500" style="background: rgba(0,0,0,0.3);">
+          <p class="font-bold text-gray-200 text-lg drop-shadow-sm border-b border-gray-300">Double Room</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe veritatis molestias repellat adipisci reiciendis</p>
+          <p><i class="fa-solid fa-money-bill-1-wave"></i> NRS. 1500</p>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded-2xl max-h-96 max-w-xs group">
+        <img src="./assets/images/room-3.jpg">
+        <div class="space-y-2 absolute bottom-0 left-0 backdrop-blur-md p-4  text-gray-200 group-hover:-bottom-96 transition-all duration-500" style="background: rgba(0,0,0,0.3);">
+          <p class="font-bold text-gray-200 text-lg drop-shadow-sm border-b border-gray-300">Balcony Room</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe veritatis molestias repellat adipisci reiciendis</p>
+          <p><i class="fa-solid fa-money-bill-1-wave"></i> NRS. 2000</p>
+        </div>
+      </div>
+    </div>
 
   </section>
 
