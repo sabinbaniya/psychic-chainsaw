@@ -17,7 +17,7 @@
 
 <body class="max-w-[1400px] mx-auto">
   <?php require_once("./include/navbar.php") ?>
-  <section class="lg:mb-52 md:mb-40 mb-32">
+  <section class="lg:mb-42 md:mb-40 mb-32">
     <section class="relative">
       <main class="bg-[url('./assets/images/hero.jpg')] min-h-[60vh] mx-4 bg-center bg-cover bg-no-repeat rounded-lg overflow-x-hidden">
         <div class="w-[80%] h-[60vh] flex items-center bg-gradient-to-r from-green-300 via-blue-200 to-transparent ">
@@ -25,7 +25,7 @@
             <h1 class="text-4xl font-bold leading-[3rem] mb-8 drop-shadow-sm">Enjoy Your Travel <br /> With Us.</h1>
             <p class="max-w-[50ch] mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet iure accusantium voluptates exercitationem, illo et officia neque commodi accusamus explicabo, labore ut, illum iste nisi quam quasi id dolores assumenda.</p>
             <div>
-              <a href="./booknow.php" class="px-4 py-2 rounded-lg bg-transparent text-black font-bold border-[3px] border-gray-600 hover:bg-black hover:text-white">Book Now</a>
+              <a href="#sneakpeek" class="px-4 py-2 rounded-lg bg-transparent text-black font-bold border-[3px] border-gray-600 hover:bg-black hover:text-white">Know More</a>
             </div>
           </div>
         </div>
@@ -69,6 +69,7 @@
       </div>
     </section>
   </section>
+  <div class="h-10" id="sneakpeek"></div>
   <section class="mb-10 flex mx-4 flex-col-reverse lg:flex-row lg:space-x-8 justify-start items-start">
     <div class="grid grid-cols-4 gap-x-4 grid-rows-3 basis-1/2">
       <div class="row-span-2 col-span-4 h-80">
