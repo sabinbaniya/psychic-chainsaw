@@ -77,18 +77,20 @@
         <img id="selectedImage" src="./assets/images/hotel-1.jpg" class="rounded-lg h-full w-full">
       </div>
       <div class="row-span-1 col-span-4 gap-x-4 grid grid-cols-4 mt-8">
-        <img src="./assets/images/hotel-1.jpg" class="carouselImages cursor-pointer hover:scale-105 transition-all w-40 h-20 opacity-75 hover:opacity-100">
-        <img src="./assets/images/hotel-2.jpg" class="carouselImages cursor-pointer hover:scale-105 transition-all w-40 h-20 opacity-75 hover:opacity-100">
-        <img src="./assets/images/hotel-3.jpg" class="carouselImages cursor-pointer hover:scale-105 transition-all w-40 h-20 opacity-75 hover:opacity-100">
-        <img src="./assets/images/hotel-4.jpg" class="carouselImages cursor-pointer hover:scale-105 transition-all w-40 h-20 opacity-75 hover:opacity-100">
+        <img src="./assets/images/hotel-1.jpg" class="carouselImages cursor-pointer hover:scale-105 transition-all w-40 h-20 opacity-75 hover:opacity-100 rounded-md">
+        <img src="./assets/images/hotel-2.jpg" class="carouselImages cursor-pointer hover:scale-105 transition-all w-40 h-20 opacity-75 hover:opacity-100 rounded-md">
+        <img src="./assets/images/hotel-3.jpg" class="carouselImages cursor-pointer hover:scale-105 transition-all w-40 h-20 opacity-75 hover:opacity-100 rounded-md">
+        <img src="./assets/images/hotel-4.jpg" class="carouselImages cursor-pointer hover:scale-105 transition-all w-40 h-20 opacity-75 hover:opacity-100 rounded-md">
       </div>
     </div>
     <div class="lg:basis-1/3 space-y-4 lg:pl-12 mb-8 lg:mb-0">
       <p class="font-bold text-2xl md:text-4xl text-gray-700">A Sneak Peek of our Hotel</p>
       <p class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam neque nulla tempore recusandae iure sint, quis mollitia enim pariatur inventore! Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam neque nulla tempore recusandae iure sint, quis mollitia enim pariatur inventore!</p>
       <a href="#testimonial" class="hover-underline-animation text-indigo-600 font-bold after:bg-indigo-600">See what others have to say about us <i class="fa-solid fa-chevron-right"></i></a>
-      <button class="bg-transparent border-2 border-gray-400 rounded-md text-gray-600 block px-4 py-2 hover:bg-gray-100 font-bold">Know More</button>
+      <button class="bg-transparent border-2 border-gray-400 rounded-md text-gray-600 block px-4 py-2 hover:bg-gray-100 font-bold">Explore Rooms</button>
     </div>
+  </section>
+  <section>
 
   </section>
 

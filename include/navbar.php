@@ -8,11 +8,11 @@ echo "
         <img src='./assets/images/logo_for_email.png' class='w-16' alt='Hotel Name' />
         <!-- desktop nav  -->
         <nav class='space-x-8 md:space-x-10 hidden sm:flex'>
-          <a class='hover:underline underline-offset-4 font-medium transition-all duration-500' href='#home'>Home
+          <a class='font-medium hover-underline-animation text-black after:bg-black' href='#home'>Home
           </a>
-          <a class='hover:underline underline-offset-4 font-medium transition-all duration-500' href='#about'>About Us
+          <a class='font-medium hover-underline-animation text-black after:bg-black' href='#about'>About Us
           </a>
-          <a class='hover:underline underline-offset-4 font-medium transition-all duration-500' href='#getstarted'>Our Services
+          <a class='font-medium hover-underline-animation text-black after:bg-black' href='#getstarted'>Our Services
           </a>
         </nav>
         <div>
