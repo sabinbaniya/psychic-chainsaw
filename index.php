@@ -128,35 +128,39 @@
     </div>
 
   </section>
-  <section>
-    <h3 class="text-3xl md:text-5xl font-bold text-gray-800 sm:text-left text-center">Contact Us</h3>
-    <div class="flex justify-between items-center">
-      <div class="basis-2/5">
-        <img src="./assets/images/hotel-1.jpg" class="w-full h-full">
+  <section class="mx-4">
+    <h3 class="text-3xl md:text-5xl font-bold text-gray-800 sm:text-left text-center ">Contact Us</h3>
+    <div class="flex justify-center items-stretch shadow-lg my-8 rounded-lg overflow-hidden">
+      <div class="basis-2/5 min-h-full bg-[url('./assets/images/hotel-1.jpg')] bg-cover bg-center hidden sm:block">
       </div>
-      <form action="" class="basis-3/5">
-        <div class="relative">
-          <input type="text" required autocomplete="off" class="peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
-          <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Name</p>
+      <form action="" class="basis-full sm:basis-3/5 p-8 space-y-6">
+        <h3 class="text-3xl font-bold text-gray-600">Get in touch</h3>
+        <div class="flex justify-between items-center space-x-4">
+          <div class="relative w-full ">
+            <input type="text" required autocomplete="off" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
+            <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-placeholder-shown:-z-10 z-10 peer-focus:z-10 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Name</p>
+          </div>
+          <div class="relative w-full">
+            <input type="email" required autocomplete="off" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
+            <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-placeholder-shown:-z-10 z-10 peer-focus:z-10  peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Email</p>
+          </div>
         </div>
-        <div class="relative">
-          <input type="email" required autocomplete="off" class="peer bg-white border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
-          <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Email</p>
+        <div class="flex justify-between items-center space-x-4">
+          <div class="relative w-full">
+            <input type="tel" required autocomplete="off" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
+            <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-placeholder-shown:-z-10 z-10 peer-focus:z-10  peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Mobile</p>
+          </div>
+          <div class="relative w-full">
+            <input type="text" required autocomplete="off" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
+            <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-placeholder-shown:-z-10 z-10 peer-focus:z-10  peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Subject</p>
+          </div>
         </div>
-        <div class="relative">
-          <input type="tel" required autocomplete="off" class="peer bg-white border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
-          <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Mobile</p>
-        </div>
-        <div class="relative">
-          <input type="text" required autocomplete="off" class="peer bg-white border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
-          <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Subject</p>
-        </div>
-        <div class="relative">
-          <textarea required autocomplete="off" style="resize: none;" rows="5" class="peer bg-white border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none px-4 py-2 width-full" placeholder=" "></textarea>
-          <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Message</p>
+        <div class="relative w-full">
+          <textarea required autocomplete="off" style="resize: none;" rows="5" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none px-4 py-2 width-full" placeholder=" "></textarea>
+          <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-placeholder-shown:-z-10 z-10 peer-focus:z-10 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Message</p>
         </div>
         <div>
-          <input type="submit" value="Send Now">
+          <input type="submit" value="Send Now" class="rounded-md px-4 py-2 text-white font-bold bg-indigo-500 cursor-pointer hover:bg-indigo-400">
         </div>
       </form>
     </div>
