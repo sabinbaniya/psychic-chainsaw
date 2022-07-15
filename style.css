@@ -500,6 +500,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 0px;
 }
 
+.-top-3 {
+  top: -0.75rem;
+}
+
+.left-2 {
+  left: 0.5rem;
+}
+
 .-right-\[500px\] {
   right: -500px;
 }
@@ -530,6 +538,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .-top-96 {
   top: -24rem;
+}
+
+.-bottom-10 {
+  bottom: -2.5rem;
+}
+
+.-bottom-32 {
+  bottom: -8rem;
+}
+
+.-bottom-36 {
+  bottom: -9rem;
+}
+
+.-bottom-40 {
+  bottom: -10rem;
 }
 
 .z-50 {
@@ -612,6 +636,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0px;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .mb-20 {
   margin-bottom: 5rem;
 }
@@ -632,8 +660,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1rem;
 }
 
-.mb-10 {
-  margin-bottom: 2.5rem;
+.mb-40 {
+  margin-bottom: 10rem;
 }
 
 .block {
@@ -642,6 +670,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .inline-block {
   display: inline-block;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -680,16 +712,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 50%;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-80 {
   height: 20rem;
 }
 
 .h-full {
   height: 100%;
-}
-
-.h-10 {
-  height: 2.5rem;
 }
 
 .h-12 {
@@ -796,6 +828,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-basis: 50%;
 }
 
+.basis-2\/5 {
+  flex-basis: 40%;
+}
+
+.basis-3\/5 {
+  flex-basis: 60%;
+}
+
 .border-collapse {
   border-collapse: collapse;
 }
@@ -814,8 +854,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   cursor: pointer;
 }
 
+.cursor-text {
+  cursor: text;
+}
+
 .cursor-default {
   cursor: default;
+}
+
+.resize {
+  resize: both;
 }
 
 .grid-cols-4 {
@@ -1181,6 +1229,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1.25rem;
 }
 
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
 .pb-8 {
   padding-bottom: 2rem;
 }
@@ -1212,6 +1268,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-bold {
@@ -1693,6 +1754,16 @@ body {
   opacity: 1;
 }
 
+.focus\:border-gray-600:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(75 85 99 / var(--tw-border-opacity));
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .group:hover .group-hover\:-bottom-96 {
   bottom: -24rem;
 }
@@ -1727,14 +1798,70 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.peer:-moz-placeholder-shown ~ .peer-placeholder-shown\:top-2 {
+  top: 0.5rem;
+}
+
+.peer:-ms-input-placeholder ~ .peer-placeholder-shown\:top-2 {
+  top: 0.5rem;
+}
+
+.peer:placeholder-shown ~ .peer-placeholder-shown\:top-2 {
+  top: 0.5rem;
+}
+
+.peer:-moz-placeholder-shown ~ .peer-placeholder-shown\:text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.peer:-ms-input-placeholder ~ .peer-placeholder-shown\:text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.peer:placeholder-shown ~ .peer-placeholder-shown\:text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.peer:focus ~ .peer-focus\:-top-3 {
+  top: -0.75rem;
+}
+
+.peer:focus ~ .peer-focus\:text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .peer:focus ~ .peer-focus\:text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
 @media (min-width: 640px) {
+  .sm\:-bottom-20 {
+    bottom: -5rem;
+  }
+
   .sm\:mr-8 {
     margin-right: 2rem;
+  }
+
+  .sm\:mb-36 {
+    margin-bottom: 9rem;
+  }
+
+  .sm\:mb-28 {
+    margin-bottom: 7rem;
+  }
+
+  .sm\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .sm\:mb-32 {
+    margin-bottom: 8rem;
   }
 
   .sm\:block {
@@ -1761,6 +1888,10 @@ body {
     min-width: 600px;
   }
 
+  .sm\:max-w-\[210px\] {
+    max-width: 210px;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1769,8 +1900,35 @@ body {
     grid-template-rows: repeat(2, minmax(0, 1fr));
   }
 
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
+  .sm\:items-start {
+    align-items: flex-start;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between;
+  }
+
+  .sm\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
   .sm\:text-left {
     text-align: left;
+  }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .sm\:leading-\[3rem\] {
+    line-height: 3rem;
   }
 }
 
@@ -1793,6 +1951,14 @@ body {
 
   .md\:mt-0 {
     margin-top: 0px;
+  }
+
+  .md\:mb-32 {
+    margin-bottom: 8rem;
+  }
+
+  .md\:mb-36 {
+    margin-bottom: 9rem;
   }
 
   .md\:block {
@@ -1842,10 +2008,6 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .lg\:mb-52 {
-    margin-bottom: 13rem;
-  }
-
   .lg\:mb-0 {
     margin-bottom: 0px;
   }

@@ -17,20 +17,20 @@
 
 <body class="max-w-[1400px] mx-auto">
   <?php require_once("./include/navbar.php") ?>
-  <section class="lg:mb-42 md:mb-40 mb-32">
+  <section class="lg:mb-42 sm:mb-32 mb-40">
     <section class="relative">
       <main class="bg-[url('./assets/images/hero.jpg')] min-h-[60vh] mx-4 bg-center bg-cover bg-no-repeat rounded-lg overflow-x-hidden">
         <div class="w-[80%] h-[60vh] flex items-center bg-gradient-to-r from-green-300 via-blue-200 to-transparent ">
           <div class="mx-4 text-black md:pl-16 pl-4">
-            <h1 class="text-4xl font-bold leading-[3rem] mb-8 drop-shadow-sm">Enjoy Your Travel <br /> With Us.</h1>
-            <p class="max-w-[50ch] mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet iure accusantium voluptates exercitationem, illo et officia neque commodi accusamus explicabo, labore ut, illum iste nisi quam quasi id dolores assumenda.</p>
+            <h1 class="sm:text-4xl text-2xl font-bold sm:leading-[3rem] mb-4 sm:mb-8 drop-shadow-sm">Enjoy Your Travel <br /> With Us.</h1>
+            <p class="max-w-[50ch] mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet iure accusantium voluptates exercitationem, illo et officia neque commodi accusamus explicabo, labore ut.</p>
             <div>
               <a href="#sneakpeek" class="px-4 py-2 rounded-lg bg-transparent text-black font-bold border-[3px] border-gray-600 hover:bg-black hover:text-white">Know More</a>
             </div>
           </div>
         </div>
       </main>
-      <div class="absolute flex items-start justify-between rounded-lg shadow-md px-8 py-4 w-[80%] text-center md:text-left left-1/2 -translate-x-1/2 -bottom-20 md:-bottom-28 z-50 overflow-hidden bg-white">
+      <div class="absolute flex items-center space-y-4 sm:space-y-0 sm:items-start flex-col sm:flex-row justify-center sm:justify-between rounded-lg shadow-md px-8 py-4 w-[80%] text-center md:text-left left-1/2 -translate-x-1/2 -bottom-40 sm:-bottom-20 md:-bottom-28 z-50 overflow-hidden bg-white">
         <div>
           <p class="text-gray-600 text-lg font-bold">Facilities</p>
           <div>
@@ -42,14 +42,14 @@
             </ul>
           </div>
         </div>
-        <div class="w-80 md:w-full min-h-[55px] md:basis-1/3">
+        <div class="sm:max-w-[210px] md:w-full min-h-[55px] md:basis-1/3">
           <p class="text-gray-600 text-lg font-bold">Book now </p>
           <div>
-            <ul id="animating_ul" class="break-normal mt-0 md:mt-4 font-bold relative w-56">
-              <li class="absolute left-1/2 text-lg -translate-x-1/2 md:left-0 md:translate-x-0">A Deluxe Room</li>
-              <li class="invisible absolute left-1/2 text-lg -translate-x-1/2 md:left-0 md:translate-x-0">A Suite</li>
-              <li class="invisible absolute left-1/2 text-lg -translate-x-1/2 md:left-0 md:translate-x-0">A Double Bed Room</li>
-              <li class="invisible absolute left-1/2 text-lg -translate-x-1/2 md:left-0 md:translate-x-0">A Balcony Room</li>
+            <ul id="animating_ul" class="break-normal mt-0 md:mt-4 font-bold relative w-56 flex justify-center">
+              <li class="absolute text-lg  md:left-0 md:translate-x-0">A Deluxe Room</li>
+              <li class="invisible absolute text-lg  md:left-0 md:translate-x-0">A Suite</li>
+              <li class="invisible absolute text-lg  md:left-0 md:translate-x-0">A Double Bed Room</li>
+              <li class="invisible absolute text-lg  md:left-0 md:translate-x-0">A Balcony Room</li>
             </ul>
           </div>
         </div>
@@ -125,6 +125,40 @@
           <p><i class="fa-solid fa-money-bill-1-wave"></i> NRS. 2000</p>
         </div>
       </div>
+    </div>
+
+  </section>
+  <section>
+    <h3 class="text-3xl md:text-5xl font-bold text-gray-800 sm:text-left text-center">Contact Us</h3>
+    <div class="flex justify-between items-center">
+      <div class="basis-2/5">
+        <img src="./assets/images/hotel-1.jpg" class="w-full h-full">
+      </div>
+      <form action="" class="basis-3/5">
+        <div class="relative">
+          <input type="text" required autocomplete="off" class="peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
+          <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Name</p>
+        </div>
+        <div class="relative">
+          <input type="email" required autocomplete="off" class="peer bg-white border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
+          <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Email</p>
+        </div>
+        <div class="relative">
+          <input type="tel" required autocomplete="off" class="peer bg-white border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
+          <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Mobile</p>
+        </div>
+        <div class="relative">
+          <input type="text" required autocomplete="off" class="peer bg-white border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
+          <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Subject</p>
+        </div>
+        <div class="relative">
+          <textarea required autocomplete="off" style="resize: none;" rows="5" class="peer bg-white border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none px-4 py-2 width-full" placeholder=" "></textarea>
+          <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Message</p>
+        </div>
+        <div>
+          <input type="submit" value="Send Now">
+        </div>
+      </form>
     </div>
 
   </section>
