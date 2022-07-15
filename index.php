@@ -1,3 +1,35 @@
+<?php
+if (isset($_POST["submit"])) {
+  $name = $_POST["full_name"];
+  $email = $_POST["email"];
+  $mobile = $_POST["phone"];
+  $subject = $_POST["subject"];
+  $message = $_POST["message"];
+
+  require_once("./email_sender.php");
+  require_once("./db/connectDB.php");
+
+  if ($stmt = $conn->prepare("INSERT INTO contact_form_submissions (name, mobile,subject, message,email) VALUES (?,?,?,?,?)")) {
+    $stmt->bind_param("sssss", $name, $mobile, $subject, $message, $email);
+    $stmt->execute();
+
+    if ($stmt->affected_rows > 0) {
+      $res = send_contact_email($name, $email, $subject, $mobile, $message);
+      if ($res) {
+        header("Location: ./?formsubmitted=true");
+      } else {
+        header("Location: ./?formsubmitted=false");
+      }
+    } else {
+      header("Location: ./?formsubmitted=false");
+    }
+  } else {
+    header("Location: ./?formsubmitted=false");
+  }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,8 +47,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="max-w-[1400px] mx-auto">
+<body class="max-w-[1400px] mx-auto overflow-x-hidden">
   <?php require_once("./include/navbar.php") ?>
+
+  <?php
+  if (isset($_GET["formsubmitted"])) {
+    if ($_GET["formsubmitted"] === "true") {
+      echo '
+            <div class="z-50 w-64 h-10 bg-green-400 flex justify-center items-center text-center rounded-lg absolute -right-[200px] top-28 notification">
+                <p class="text-white text-md">Successfully sent your message.</p>
+            </div>
+            ';
+    } else {
+      echo '
+            <div class="z-50 w-96 h-10 bg-red-400 flex justify-center items-center text-center rounded-lg absolute -right-[500px] top-28 notification">
+                <p class="text-white text-md">Couldn\'t submit your form. Please try again later!</p>
+            </div>
+            ';
+    }
+  }
+
+  ?>
+
   <div class="h-10" id="home"></div>
   <section class="lg:mb-42 sm:mb-32 mb-40">
     <section class="relative">
@@ -135,44 +187,52 @@
     <div class="flex justify-center items-stretch shadow-lg my-8 rounded-lg overflow-hidden">
       <div class="basis-2/5 min-h-full bg-[url('./assets/images/hotel-1.jpg')] bg-cover bg-center hidden sm:block">
       </div>
-      <form action="" class="basis-full sm:basis-3/5 p-8 space-y-6">
+      <form action="./index.php" method="POST" class="basis-full sm:basis-3/5 p-8 space-y-6">
         <h3 class="text-3xl font-bold text-gray-600">Get in touch</h3>
         <div class="flex justify-between items-center space-x-4">
           <div class="relative w-full ">
-            <input type="text" required autocomplete="off" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
-            <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-placeholder-shown:-z-10 z-10 peer-focus:z-10 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Name</p>
+            <input type="text" name="full_name" required autocomplete="off" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
+            <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-placeholder-shown:-z-10 z-10 peer-focus:z-10 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Full Name</p>
           </div>
           <div class="relative w-full">
-            <input type="email" required autocomplete="off" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
+            <input type="email" name="email" required autocomplete="off" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
             <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-placeholder-shown:-z-10 z-10 peer-focus:z-10  peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Email</p>
           </div>
         </div>
         <div class="flex justify-between items-center space-x-4">
           <div class="relative w-full">
-            <input type="tel" required autocomplete="off" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
+            <input type="tel" name="phone" required autocomplete="off" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
             <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-placeholder-shown:-z-10 z-10 peer-focus:z-10  peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Mobile</p>
           </div>
           <div class="relative w-full">
-            <input type="text" required autocomplete="off" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
+            <input type="text" name="subject" required autocomplete="off" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none pl-6 pr-2 py-2" placeholder=" ">
             <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-placeholder-shown:-z-10 z-10 peer-focus:z-10  peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Subject</p>
           </div>
         </div>
         <div class="relative w-full">
-          <textarea required autocomplete="off" style="resize: none;" rows="5" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none px-4 py-2 width-full" placeholder=" "></textarea>
+          <textarea required autocomplete="off" name="message" style="resize: none;" rows="5" class="w-full peer bg-transparent border-2 border-gray-400 rounded-md focus:border-gray-600 focus:outline-none px-4 py-2 width-full" placeholder=" "></textarea>
           <p class="absolute cursor-text -top-3 left-2 px-2 peer-placeholder-shown:top-2 peer-placeholder-shown:-z-10 z-10 peer-focus:z-10 peer-focus:-top-3 transition-all bg-white text-sm peer-placeholder-shown:text-base peer-focus:text-sm inline duration-300">Message</p>
         </div>
         <div>
-          <input type="submit" value="Send Now" class="rounded-md px-4 py-2 text-white font-bold bg-indigo-500 cursor-pointer hover:bg-indigo-400">
+          <input type="submit" id="btn" name="submit" value="Send Now" class="rounded-md px-4 py-2 text-white font-bold bg-indigo-500 cursor-pointer hover:bg-indigo-400" />
         </div>
       </form>
     </div>
   </section>
   <?php require_once("./include/footer.php") ?>
-  <script>
-    function closeMenu() {
-      document.getElementById("menu").checked = false;
-    }
-  </script>
+
 </body>
+<script>
+  function closeMenu() {
+    document.getElementById("menu").checked = false;
+  }
+
+  function disableFormSubmission() {
+    const btn = document.getElementById("btn")
+    btn.disabled = true;
+    btn.style.cursor = "not-allowed";
+    btn.style.opacity = "0.5";
+  }
+</script>
 
 </html>

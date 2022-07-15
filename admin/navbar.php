@@ -4,21 +4,30 @@ $active;
 if (strpos($_SERVER["REQUEST_URI"], "createuser") !== false) {
     $active = "createuser";
 } else {
-    $active = "bookings";
+    if (strpos($_SERVER["REQUEST_URI"], "form-submissions") !== false) {
+        $active = "forms";
+    } else {
+        $active = "bookings";
+    }
 }
+
 
 echo '
  <!-- nav component starts  -->
-    <header class="flex justify-between items-center h-20 max-w-[1400px] mx-auto px-8">
+    <header class="flex justify-between items-center h-20 max-w-[1400px] mx-auto px-8 bg-white text-black">
         <div>
-            <a href="./index.php" class="text-gray-600 text-2xl font-bold">Welcome , ' . substr($_SESSION["name"], 0, 10) . '</a>
+            <a href="./index.php" class="text-gray-600 text-2xl font-bold">Welcome , ' . substr($_SESSION["name"], 0, 15) . '</a>
         </div>
         <!-- menu for desktop starts -->
         <nav class="hidden md:block">
             <ul class="flex space-x-8">
                 <li>
                     <a href="./index.php" class="text-lg inline-block ' . ($active == "bookings" ? "bg-gray-900 text-white" : "hover:bg-gray-300") . ' px-2 py-1 rounded-lg transition-all">Bookings</a>
-                </li> ' . ($_SESSION["user_role"] == "admin" ? "<li>
+                </li>
+                 <li>
+                    <a href="./form-submissions.php" class="text-lg inline-block ' . ($active == "forms" ? "bg-gray-900 text-white" : "hover:bg-gray-300") . ' px-2 py-1 rounded-lg transition-all">Form Submissions</a>
+                </li>
+                ' . ($_SESSION["user_role"] == "admin" ? "<li>
                     <a href='./createuser.php'  class='text-lg inline-block px-2 py-1  " . ($active == 'createuser' ? 'bg-gray-900 text-white' : 'hover:bg-gray-300') . " transition-all rounded-lg'>Create User</a>
                 </li>" : null) . '
             </ul>
