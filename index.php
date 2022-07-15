@@ -164,9 +164,8 @@
         </div>
       </form>
     </div>
-
   </section>
-
+  <?php require_once("./include/footer.php") ?>
   <script>
     function closeMenu() {
       document.getElementById("menu").checked = false;
