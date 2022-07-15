@@ -17,6 +17,7 @@
 
 <body class="max-w-[1400px] mx-auto">
   <?php require_once("./include/navbar.php") ?>
+  <div class="h-10" id="home"></div>
   <section class="lg:mb-42 sm:mb-32 mb-40">
     <section class="relative">
       <main class="bg-[url('./assets/images/hero.jpg')] min-h-[60vh] mx-4 bg-center bg-cover bg-no-repeat rounded-lg overflow-x-hidden">
@@ -128,6 +129,7 @@
     </div>
 
   </section>
+  <div class="h-10" id="contact"></div>
   <section class="mx-4">
     <h3 class="text-3xl md:text-5xl font-bold text-gray-800 sm:text-left text-center ">Contact Us</h3>
     <div class="flex justify-center items-stretch shadow-lg my-8 rounded-lg overflow-hidden">

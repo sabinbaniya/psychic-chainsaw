@@ -8,11 +8,13 @@ echo "
         <img src='./assets/images/logo_for_email.png' class='w-16' alt='Hotel Name' />
         <!-- desktop nav  -->
         <nav class='space-x-8 md:space-x-10 hidden sm:flex'>
-          <a class='font-medium hover-underline-animation text-black after:bg-black' href='#home'>Home
+          <a class='font-medium hover-underline-animation text-black after:bg-black' href='./#home'>Home
           </a>
-          <a class='font-medium hover-underline-animation text-black after:bg-black' href='#about'>About Us
+          <a class='font-medium hover-underline-animation text-black after:bg-black' href='./#sneakpeek'>About Us
           </a>
-          <a class='font-medium hover-underline-animation text-black after:bg-black' href='#getstarted'>Our Services
+          <a class='font-medium hover-underline-animation text-black after:bg-black' href='./#room'>Our Rooms
+          </a>
+          <a class='font-medium hover-underline-animation text-black after:bg-black' href='./#contact'>Contact
           </a>
         </nav>
         <div>
@@ -28,9 +30,11 @@ echo "
           </span>
 
           <div class='absolute z-50 h-60 left-0 right-0 transition-all peer-checked:top-28 sm:hidden -top-96 rounded-sm space-y-4 flex flex-col w-11/12 mx-auto bg-white text-[#002635] text-center'>
-            <a onclick='closeMenu()' class='py-2 mt-4' href='#home'>Home </a>
-            <a onclick='closeMenu()' class='py-2' href='#about'>About Us </a>
-            <a onclick='closeMenu()' class='py-2' href='#services'>Our Services
+            <a onclick='closeMenu()' class='py-2 mt-4' href='./#home'>Home </a>
+            <a onclick='closeMenu()' class='py-2' href='#sneakpeek'>About Us </a>
+            <a onclick='closeMenu()' class='py-2' href='#room'>Our Rooms
+            </a>
+            <a onclick='closeMenu()' class='py-2' href='#contact'>Contact Us
             </a>
             <a onclick='closeMenu()' class='py-2 mb-4' href='./booknow.php' class=''>Book Now</a>
           </div>
