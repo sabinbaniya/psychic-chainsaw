@@ -8,13 +8,18 @@
     <title>Book Now</title>
     <link rel="stylesheet" href="style.css">
     <script src="./booknow.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="min-h-screen flex justify-center items-center max-w-[1400px] mx-auto">
     <section class="mx-4">
         <?php require_once("./include/navbar.php") ?>
         <div>
-            <form action="./book.php" class="my-8 p-8 rounded-lg min-w-[300px] sm:min-w-[600px] max-w-[622px]" style="background-color: #abc;" onsubmit="showLoader()">
+            <h3 class="text-2xl sm:text-4xl font-bold text-gray-700 my-10 text-center">Book a reservation for a room</h3>
+            <form action="./book.php" class="my-8 p-8 bg-gray-200 rounded-lg min-w-[300px] sm:min-w-[600px] max-w-[622px] mx-auto" onsubmit="showLoader()">
                 <div class="max-w-[548px]">
                     <label for="name" class="label_style">Full Name</label>
                     <input required autocomplete="off" type="text" name="name" id="name" class="input_style">

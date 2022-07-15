@@ -56,7 +56,7 @@ body {
 }
 
 .label_style {
-  @apply text-white font-semibold block my-4;
+  @apply text-black font-semibold block my-4;
 }
 
 .input_style {
